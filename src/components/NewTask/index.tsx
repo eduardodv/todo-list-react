@@ -3,8 +3,14 @@ import { PlusCircle } from 'phosphor-react'
 import styles from './styles.module.css'
 import { FormEvent, ChangeEvent, useState } from 'react';
 
+interface PropsTasks {
+  id: number,
+  text: string,
+  isComplete: boolean,
+}
+
 export interface PropsNewTask {
-  createNewTask: (newTaskTextToAdd: object) => void;
+  createNewTask: (newTaskTextToAdd: PropsTasks) => void;
 }
 
 export function NewTask ({createNewTask}: PropsNewTask) {
@@ -21,8 +27,8 @@ export function NewTask ({createNewTask}: PropsNewTask) {
     if (newTaskText.trim() === '') return
 
     const newTaskTextToAdd = {
-      text: newTaskText,
       id: idTask,
+      text: newTaskText,
       isComplete: false
     }
     

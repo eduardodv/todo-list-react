@@ -9,13 +9,19 @@ import { Task } from '../Task'
 import { WithoutTasksCreated } from '../WithoutTasksCreated'
 import { Footer } from '../Footer'
 
+interface PropsTasks {
+  id: number,
+  text: string,
+  isComplete: boolean,
+}
+
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<PropsTasks[]>([]);
 
   const totalTasks = tasks.length
   const completedTasks = tasks.filter(task => task.isComplete === true).length
-    
-  function createNewTask(newTaskTextToAdd: object) {
+
+  function createNewTask(newTaskTextToAdd: PropsTasks) {
     setTasks([...tasks, newTaskTextToAdd])
   }
 
@@ -50,7 +56,7 @@ function App() {
           <TaskCount title='Tarefas criadas' totalTasks={totalTasks} />
           <TaskCount title='Concluídas' totalTasks={totalTasks} completedTasks={completedTasks} />
         </div>
-        {tasks.map((task) => {
+        {tasks?.map((task) => {
           return (
             <Task 
               task={task}

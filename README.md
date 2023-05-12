@@ -3,6 +3,8 @@
 **ToDo list** desenvolvido em react + Typescript como desafio do curso de React da Rocketseat.
 É um projeto pequeno, porém separei em vários componentes para estudar melhor como funciona a comunicação entre os componentes através das props.
 
+Demo: [ToDo list](https://eduardodv.github.io/todo-list-react/)
+
 <br />
 
 <p align="center">
