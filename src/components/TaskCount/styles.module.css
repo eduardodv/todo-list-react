@@ -1,0 +1,29 @@
+.box {
+  display: flex;
+  font-size: 0.875rem;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.box p {
+  color: var(--blue-400);
+}
+
+.box:nth-child(even) p {
+  color: var(--purple-400);
+}
+
+.box span {
+  color: var(--white);
+  font-size: 0.75rem;
+  border-radius: 100px;
+  padding: 0.1rem 0.55rem;
+  background-color: var(--gray-400);
+}
+
+@media (max-width: 350px) {
+  .box {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}

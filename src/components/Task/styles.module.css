@@ -1,0 +1,93 @@
+.taskItem {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 0.75rem;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  display: grid;
+  gap: 0.75rem;
+  align-items: flex-start;
+  grid-template-columns: 2rem 1fr 1.5rem;
+}
+
+.taskItem .check button {
+  width: 1.2rem;
+  height: 1.2rem;
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--blue-400);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.taskItem .check button:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.2s ease;
+  background-color: var(--blue-500);
+}
+
+.taskItem .check button svg {
+  color: var(--white);
+  transform: translateY(1px);
+}
+
+.taskItem:not(.completed) .check button svg {
+  opacity: 0;
+}
+
+.taskItem .check button:hover:before {
+  opacity: 0.2;
+}
+
+.taskItem p {
+  color: var(--white);
+  font-size: 0.875rem;
+}
+
+.taskItem .delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--gray-300);
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.taskItem .delete:hover {
+  color: var(--red-500);
+  background-color: var(--gray-400);
+}
+
+.completed p {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.completed .check button {
+  border-color: var(--purple-500);
+  background: var(--purple-500);
+}
+
+.completed .check button:before {
+  display: none;
+}
+
+.completed .check button:hover {
+  border-color: var(--purple-400);
+  background: var(--purple-400);
+}
